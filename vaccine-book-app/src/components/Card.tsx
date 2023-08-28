@@ -1,18 +1,20 @@
+import { Settings } from "http2";
 import styles from "./card.module.css";
 import Image from "next/image";
 
-export default function () {
+export default function ({
+  hospitalName,
+  hospitalSrc,
+}: {
+  hospitalName: string;
+  hospitalSrc: string;
+}) {
   return (
     <div className={styles.card}>
       <div className={styles.carding}>
-        <Image
-          src={"/img/vaccine_card.jpg"}
-          alt="card"
-          fill={true}
-          objectFit="cover"
-        />
+        <Image src={hospitalSrc} alt="card" fill={true} objectFit="cover" />
       </div>
-      <div className={styles.text}>Vaccines: Your Shield Against COVID-19</div>
+      <div className={styles.text}>{hospitalName}</div>
     </div>
   );
 }

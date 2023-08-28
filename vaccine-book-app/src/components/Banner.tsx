@@ -10,10 +10,13 @@ export default function () {
         fill={true}
         objectFit="cover"
         priority
+        sizes="100vh"
       />
       <div className={styles.bannerText}>
-        <h1 className={styles.title}>VaxServe</h1>
-        <h3 className={styles.slogan}>"Your Pathway to a Safer Tomorrow"</h3>
+        <h1 className="text-6xl font-bold mb-2">VaxServe</h1>
+        <h3 className="text-base mt-3 font-medium">
+          "Your Pathway to a Safer Tomorrow"
+        </h3>
       </div>
     </div>
   );

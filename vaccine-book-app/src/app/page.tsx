@@ -4,17 +4,35 @@ import Card from "@/components/Card";
 
 export default function Home() {
   return (
-    <main>
+    <main
+      className="
+      bg-amber-50
+    "
+    >
       <Banner />
       <div
         style={{
           margin: "20px",
           display: "flex",
-          justifyContent: "center",
-          alignContent: "center",
+          justifyContent: "space-around",
+          alignContent: "space-around",
+          flexWrap: "wrap",
+          flexDirection: "row",
         }}
       >
-        <Card />
+        <Card
+          hospitalName="Chulalongkorn Hospital"
+          hospitalSrc="/img/chula.jpg"
+        />
+        <Card
+          hospitalName="Rajavithi Hospital"
+          hospitalSrc="/img/rajavithi.jpg"
+        />
+        <Card
+          hospitalName="Thammasat University Hospital
+          "
+          hospitalSrc="/img/thammasat.jpg"
+        />
       </div>
     </main>
   );
