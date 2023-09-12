@@ -8,7 +8,7 @@ export default function () {
         src={"/img/vaccine_banner.jpg"}
         alt="cover"
         fill={true}
-        objectFit="cover"
+        className="object-cover"
         priority
         sizes="100vh"
       />

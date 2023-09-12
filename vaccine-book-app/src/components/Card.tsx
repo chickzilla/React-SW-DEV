@@ -1,7 +1,6 @@
-import { Settings } from "http2";
 import styles from "./card.module.css";
 import Image from "next/image";
-
+import InteractiveCard from "./InteractiveCard";
 export default function ({
   hospitalName,
   hospitalSrc,
@@ -10,11 +9,11 @@ export default function ({
   hospitalSrc: string;
 }) {
   return (
-    <div className={styles.card}>
+    <InteractiveCard>
       <div className={styles.carding}>
         <Image src={hospitalSrc} alt="card" fill={true} objectFit="cover" />
       </div>
       <div className={styles.text}>{hospitalName}</div>
-    </div>
+    </InteractiveCard>
   );
 }

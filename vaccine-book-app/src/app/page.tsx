@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <main
       className="
-      bg-amber-50
+      bg-zinc-900	
     "
     >
       <Banner />
