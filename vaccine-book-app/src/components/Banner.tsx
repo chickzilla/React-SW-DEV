@@ -1,11 +1,21 @@
+"use client";
+
 import styles from "./banner.module.css";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function () {
+  const covers = [
+    "/img/vaccine_banner.jpg",
+    "/img/vaccine_banner2.jpg",
+    "/img/vaccine_banner3.jpg",
+    "/img/vaccine_banner4.jpg",
+  ];
+  const [index, setIndex] = useState(0);
   return (
-    <div className={styles.Banner}>
+    <div className={styles.Banner} onClick={() => setIndex(index + 1)}>
       <Image
-        src={"/img/vaccine_banner.jpg"}
+        src={covers[index % 4]}
         alt="cover"
         fill={true}
         className="object-cover"
