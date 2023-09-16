@@ -32,9 +32,12 @@ export default function ({
         <Rating
           name="simple-controlled"
           value={ratingParent}
-          onChange={(event, newValue) => {
-            //setValue(newValue || 0);
+          onChange={(e, newValue) => {
             Func(hospitalName, newValue);
+            console.log("Stop mai");
+          }}
+          onClick={(e) => {
+            e.stopPropagation();
           }}
         />
       </div>

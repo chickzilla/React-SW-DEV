@@ -2,6 +2,7 @@
 
 import Card from "./Card";
 import { useReducer, useState } from "react";
+import Link from "next/link";
 
 export default function CardPanel() {
   const RatingReducer = (
@@ -29,6 +30,19 @@ export default function CardPanel() {
   );
   console.log("RatingMap", RatingMap);
 
+  /**
+   * Mock Data
+   */
+  const CardRepo = [
+    { hid: "001", name: "Chulalongkorn Hospital", image: "/img/chula.jpg" },
+    { hid: "002", name: "Rajavithi Hospital", image: "/img/rajavithi.jpg" },
+    {
+      hid: "003",
+      name: "Thammasat University Hospital",
+      image: "/img/thammasat.jpg",
+    },
+  ];
+
   return (
     <div
       style={{
@@ -40,42 +54,23 @@ export default function CardPanel() {
         flexDirection: "row",
       }}
     >
-      <Card
-        hospitalName="Chulalongkorn Hospital"
-        hospitalSrc="/img/chula.jpg"
-        Func={(Hospital: string, Rate: number) => {
-          dispatchRating({
-            type: "change",
-            HostName: Hospital,
-            Rating: Rate,
-          });
-        }}
-        ratingParent={RatingMap.get("Chulalongkorn Hospital") || 0}
-      />
-      <Card
-        hospitalName="Rajavithi Hospital"
-        hospitalSrc="/img/rajavithi.jpg"
-        Func={(Hospital: string, Rate: number) => {
-          dispatchRating({
-            type: "change",
-            HostName: Hospital,
-            Rating: Rate,
-          });
-        }}
-        ratingParent={RatingMap.get("Rajavithi Hospital") || 0}
-      />
-      <Card
-        hospitalName="Thammasat University Hospital"
-        hospitalSrc="/img/thammasat.jpg"
-        Func={(Hospital: string, Rate: number) => {
-          dispatchRating({
-            type: "change",
-            HostName: Hospital,
-            Rating: Rate,
-          });
-        }}
-        ratingParent={RatingMap.get("Thammasat University Hospital") || 0}
-      />
+      {CardRepo.map((cardItem) => (
+        <Link className="w-1/5" href={`/hospital/${cardItem.hid}`}>
+          <Card
+            hospitalName={cardItem.name}
+            hospitalSrc={cardItem.image}
+            Func={(Hospital: string, Rate: number) => {
+              dispatchRating({
+                type: "change",
+                HostName: Hospital,
+                Rating: Rate,
+              });
+            }}
+            ratingParent={RatingMap.get(cardItem.name) || 0}
+          />
+        </Link>
+      ))}
+
       <div className="w-full text-xl font-medium text-black mt-[25px] ml-[100px] space-y-5">
         {Array.from(RatingMap).map(([hostMap, valueMap]) => (
           <div
