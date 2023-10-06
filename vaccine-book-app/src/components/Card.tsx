@@ -3,7 +3,6 @@
 import Image from "next/image";
 import InteractiveCard from "./InteractiveCard";
 import { Rating } from "@mui/material";
-import { useState } from "react";
 
 export default function ({
   hospitalName,
@@ -13,8 +12,8 @@ export default function ({
 }: {
   hospitalName: string;
   hospitalSrc: string;
-  Func: Function;
-  ratingParent: number;
+  Func?: Function;
+  ratingParent?: number;
 }) {
   //const [value, setValue] = useState<number>(0);
 
@@ -29,17 +28,21 @@ export default function ({
         {hospitalName}
       </div>
       <div className="h-1/6 text-center">
-        <Rating
-          name="simple-controlled"
-          value={ratingParent}
-          onChange={(e, newValue) => {
-            Func(hospitalName, newValue);
-            console.log("Stop mai");
-          }}
-          onClick={(e) => {
-            e.stopPropagation();
-          }}
-        />
+        {Func ? (
+          <Rating
+            name="simple-controlled"
+            value={ratingParent}
+            onChange={(e, newValue) => {
+              Func(hospitalName, newValue);
+              console.log("Stop mai");
+            }}
+            onClick={(e) => {
+              e.stopPropagation();
+            }}
+          />
+        ) : (
+          ""
+        )}
       </div>
     </InteractiveCard>
   );
