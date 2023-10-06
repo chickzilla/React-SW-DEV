@@ -23,11 +23,17 @@ export default async function HospitalDetailPage({
           <h1 className="text-4xl mb-[60px] text-center">
             {hospital.data.name}
           </h1>
-          <p className="text-lg my-[10px]">{hospital.data.address}</p>
-          <p className="text-lg my-[10px]">{hospital.data.district}</p>
-          <p className="text-lg my-[10px]">{hospital.data.province}</p>
-          <p className="text-lg my-[10px]">{hospital.data.postalcode}</p>
-          <p className="text-lg my-[10px]">{hospital.data.tel}</p>
+          <p className="text-lg my-[10px]">Address : {hospital.data.address}</p>
+          <p className="text-lg my-[10px]">
+            District : {hospital.data.district}
+          </p>
+          <p className="text-lg my-[10px]">
+            province : {hospital.data.province}
+          </p>
+          <p className="text-lg my-[10px]">
+            postalcode : {hospital.data.postalcode}
+          </p>
+          <p className="text-lg my-[10px]">phone : {hospital.data.tel}</p>
         </div>
       </div>
     </main>
