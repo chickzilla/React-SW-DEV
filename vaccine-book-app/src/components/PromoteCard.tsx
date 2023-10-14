@@ -12,7 +12,7 @@ export default function PromoteCard() {
   });
 
   return (
-    <div className="w-[50%] shadow-lg mx-auto my-10 p-2 rounded-lg bg-gray-200 flex flex-row ">
+    <div className="w-[50%] shadow-lg mx-auto my-10 p-2 rounded-lg border-dashed bg-gray-200 flex flex-row ">
       <VideoPlayer vdoSrc="/video/getvaccine.mp4" isplaying={playing} />
       <div className="mx-auto flex flex-col m-5 text-black text-2xl">
         Get your vaccine today.
