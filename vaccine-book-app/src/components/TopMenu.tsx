@@ -1,7 +1,11 @@
 import Image from "next/image";
 import TopMenuItem from "./TopMenuItem";
+import { Link } from "@mui/material";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 
-export default function TopMenu() {
+export default async function TopMenu() {
+  const session = await getServerSession(authOptions);
   return (
     <div
       className="h-12 
@@ -13,6 +17,22 @@ export default function TopMenu() {
         pr-2
         "
     >
+      {session ? (
+        <Link
+          href="/api/auth/signout"
+          className="text-white my-auto font-semibold relative right-[80%]"
+        >
+          Sign-out
+        </Link>
+      ) : (
+        <Link
+          href="/api/auth/signin"
+          className="text-white my-auto font-semibold relative right-[80%]"
+        >
+          Sign-in
+        </Link>
+      )}
+
       <TopMenuItem title="Booking" pageRef="/booking" />
       <Image
         src={"/img/logo.png"}
