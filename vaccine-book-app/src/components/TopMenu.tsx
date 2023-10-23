@@ -1,7 +1,11 @@
 import Image from "next/image";
 import TopMenuItem from "./TopMenuItem";
+import { Link } from "@mui/material";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 
-export default function TopMenu() {
+export default async function TopMenu() {
+  const session = await getServerSession(authOptions);
   return (
     <div
       className="h-12 
@@ -13,30 +17,6 @@ export default function TopMenu() {
         pr-2
         "
     >
-<<<<<<< HEAD
-      {session ? (
-        <Link
-          href="/api/auth/signout"
-          className="text-white my-auto font-semibold relative right-[70%]"
-        >
-          Sign-out
-        </Link>
-      ) : (
-        <Link
-          href="/api/auth/signin"
-          className="text-white my-auto font-semibold relative right-[70%]"
-        >
-          Sign-in
-        </Link>
-      )}
-      <Link
-        href="/mybooking"
-        className="text-white my-auto font-semibold relative right-[65%] py-auto"
-      >
-        My Booking
-      </Link>
-
-||||||| 008586a (Week 10)
       {session ? (
         <Link
           href="/api/auth/signout"
@@ -53,8 +33,6 @@ export default function TopMenu() {
         </Link>
       )}
 
-=======
->>>>>>> parent of 008586a (Week 10)
       <TopMenuItem title="Booking" pageRef="/booking" />
       <Image
         src={"/img/logo.png"}
