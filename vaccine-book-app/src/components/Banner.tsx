@@ -4,6 +4,7 @@ import styles from "./banner.module.css";
 import Image from "next/image";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { useSession } from "next-auth/react";
 
 export default function () {
   const covers = [
@@ -14,6 +15,9 @@ export default function () {
   ];
   const [index, setIndex] = useState(0);
   const rounter = useRouter();
+
+  const { data: session } = useSession();
+  console.log(session?.user);
 
   return (
     <div className={styles.Banner} onClick={() => setIndex(index + 1)}>
@@ -31,6 +35,12 @@ export default function () {
           "Your Pathway to a Safer Tomorrow"
         </h3>
       </div>
+      {session ? (
+        <div className="z-30 absolute top-30 right-10 font-semibold text-black text-xl">
+          Hello {session.user?.name}
+        </div>
+      ) : null}
+
       <button
         className="bg-white text-cyan-600 border border-cyan-600 font-semibold py-2 px-2 m-2 rounded z-30 absolute bottom-0 right-10 hover:bg-cyan-600 hover:text-white hover:border-transparent"
         onClick={(e) => {

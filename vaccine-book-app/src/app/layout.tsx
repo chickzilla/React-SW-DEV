@@ -2,17 +2,10 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import TopMenu from "@/components/TopMenu";
-<<<<<<< HEAD
 import NextAuthProvider from "@/providers/NextAuthProvider";
 import { getServerSession } from "next-auth";
 import { authOptions } from "./api/auth/[...nextauth]/route";
 import ReduxProvider from "@/redux/ReduxProvider";
-||||||| 008586a (Week 10)
-import NextAuthProvider from "@/providers/NextAuthProvider";
-import { getServerSession } from "next-auth";
-import { authOptions } from "./api/auth/[...nextauth]/route";
-=======
->>>>>>> parent of 008586a (Week 10)
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,25 +19,16 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const session = getServerSession(authOptions);
   return (
     <html lang="en">
       <body className={inter.className}>
-<<<<<<< HEAD
         <ReduxProvider>
           <NextAuthProvider session={session}>
             <TopMenu />
             {children}
           </NextAuthProvider>
         </ReduxProvider>
-||||||| 008586a (Week 10)
-        <NextAuthProvider session={session}>
-          <TopMenu />
-          {children}
-        </NextAuthProvider>
-=======
-        <TopMenu />
-        {children}
->>>>>>> parent of 008586a (Week 10)
       </body>
     </html>
   );

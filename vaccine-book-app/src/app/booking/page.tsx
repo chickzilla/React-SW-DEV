@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 "use client";
 
 import BookingForm from "@/components/BookingForm";
@@ -40,30 +39,8 @@ export default function Booking() {
     dispatch(addBooking(item));
     // }
   };
-||||||| 008586a (Week 10)
-import LocationDateReserve from "@/components/LocationDateReserve";
-import SelectHospital from "@/components/SelectHospital";
-import PersonalInput from "@/components/PersonalInput";
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
-import getUserProfile from "@/libs/getUserProfile";
 
-export default async function Booking() {
-  const session = await getServerSession(authOptions);
-
-  if (!session || !session.user.token) return null;
-
-  const profile = await getUserProfile(session.user.token);
-  var createdAt = new Date(profile.data.createdAt);
-=======
-import LocationDateReserve from "@/components/LocationDateReserve";
-import SelectHospital from "@/components/SelectHospital";
-import PersonalInput from "@/components/PersonalInput";
->>>>>>> parent of 008586a (Week 10)
-
-export default function Booking() {
   return (
-<<<<<<< HEAD
     /*
     <main className="w-[100%] flex flex-col items-center space-y-4 mt-[50px] pt-[30px] py-[100px]">
       <div className="text-2xl bg-slate-200 text-black text-sm">
@@ -76,18 +53,6 @@ export default function Booking() {
     </main>*/
 
     <main className="w-[100%] flex flex-col items-center space-y-4 mt-[50px] pt-[30px] py-[100px]">
-||||||| 008586a (Week 10)
-    <main className="w-[100%] flex flex-col items-center space-y-4 mt-[50px] pt-[30px]">
-      <div className="text-2xl bg-slate-200 text-black text-sm">
-        {profile.data.name}
-        <div className="block m-2">Email : {profile.data.email}</div>
-        <div className="block m-2">Tel : {profile.data.tel}</div>
-        <div className="block m-2">Member Since : {createdAt.toString()}</div>
-      </div>
-
-=======
-    <main className="w-[100%] flex flex-col items-center space-y-4 mt-[50px] pt-[30px]">
->>>>>>> parent of 008586a (Week 10)
       <div className="w-fit text-black text-3xl font-bold justify-center">
         BOOKING FORM
       </div>
