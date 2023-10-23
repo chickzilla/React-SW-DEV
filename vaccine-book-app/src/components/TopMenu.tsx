@@ -20,18 +20,24 @@ export default async function TopMenu() {
       {session ? (
         <Link
           href="/api/auth/signout"
-          className="text-white my-auto font-semibold relative right-[80%]"
+          className="text-white my-auto font-semibold relative right-[70%]"
         >
           Sign-out
         </Link>
       ) : (
         <Link
           href="/api/auth/signin"
-          className="text-white my-auto font-semibold relative right-[80%]"
+          className="text-white my-auto font-semibold relative right-[70%]"
         >
           Sign-in
         </Link>
       )}
+      <Link
+        href="/mybooking"
+        className="text-white my-auto font-semibold relative right-[65%] py-auto"
+      >
+        My Booking
+      </Link>
 
       <TopMenuItem title="Booking" pageRef="/booking" />
       <Image

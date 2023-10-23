@@ -2,7 +2,11 @@
 
 import { Select, MenuItem } from "@mui/material";
 
-export default function SelectHospital() {
+export default function SelectHospital({
+  onHospitalChange,
+}: {
+  onHospitalChange: Function;
+}) {
   return (
     <div
       className="flex flex-col w-[100%] space-y-10 my-[50px]
@@ -16,6 +20,9 @@ export default function SelectHospital() {
         name="hospital"
         id="hospital"
         className="h-[2em] w-[200px]"
+        onChange={(value) => {
+          onHospitalChange(value);
+        }}
       >
         <MenuItem value="Chula">Chulalongkorn Hospital</MenuItem>
         <MenuItem value="Rajavinit">Rajavithi Hospital</MenuItem>
