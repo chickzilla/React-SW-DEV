@@ -1,7 +1,7 @@
 export interface BookingItem {
-  patientId: string;
-  firstName: string;
-  lastName: string;
+  name: string;
+  surname: string;
+  id: string;
   hospital: string;
-  pickupDate: string;
+  date: string;
 }
