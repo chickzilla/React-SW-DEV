@@ -2,6 +2,7 @@ import BookingVaccine from "@/components/BookingVaccine";
 import { authOptions } from "../api/auth/[...nextauth]/route";
 import { getServerSession } from "next-auth";
 import getUserProfile from "@/libs/getUserProfile";
+import AddHospitalForm from "@/components/AddHospitalForm";
 
 export default async function Booking() {
   const session = await getServerSession(authOptions);
@@ -22,6 +23,7 @@ export default async function Booking() {
 
       <div className="text-xl font-medium text-black mt-5">Booking Page</div>
       <BookingVaccine />
+      <AddHospitalForm></AddHospitalForm>
     </main>
   );
 }

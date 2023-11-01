@@ -19,19 +19,9 @@ export default async function TopMenu() {
     >
       <div className="w-[20%] flex flex-row justify-center space-x-10">
         {session ? (
-          <Link
-            href="/api/auth/signout"
-            className="text-white my-auto font-semibold "
-          >
-            Sign-out
-          </Link>
+          <TopMenuItem title="Sign-out" pageRef="/api/auth/signout" />
         ) : (
-          <Link
-            href="/api/auth/signin"
-            className="text-white my-auto font-semibold "
-          >
-            Sign-in
-          </Link>
+          <TopMenuItem title="Sign-in" pageRef="/api/auth/signin" />
         )}
         <TopMenuItem title="myBooking" pageRef="/mybooking" />
       </div>
