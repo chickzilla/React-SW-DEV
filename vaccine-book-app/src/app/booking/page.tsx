@@ -23,7 +23,7 @@ export default async function Booking() {
 
       <div className="text-xl font-medium text-black mt-5">Booking Page</div>
       <BookingVaccine />
-      <AddHospitalForm></AddHospitalForm>
+     
     </main>
   );
 }
