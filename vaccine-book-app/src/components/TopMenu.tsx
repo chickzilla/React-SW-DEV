@@ -27,6 +27,8 @@ export default async function TopMenu() {
       </div>
 
       <div className="w-[20%] flex flex-row justify-center space-x-10">
+        <TopMenuItem title="Hospitals" pageRef="/hospital" />
+
         <TopMenuItem title="Booking" pageRef="/booking" />
 
         <Image

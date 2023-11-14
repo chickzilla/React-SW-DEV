@@ -17,6 +17,7 @@ export default function PromoteCard() {
       <div className="mx-auto flex flex-col m-5 text-black text-2xl">
         Get your vaccine today.
         <button
+          id="playButton"
           className="text-lg rounded-md w-[50%] h-[40%] mt-[20%] bg-sky-600 hover:bg-indigo-600 mx-2 px-1 py-1 text-white shadow-sm "
           onClick={() => {
             setPlaying(!playing);
